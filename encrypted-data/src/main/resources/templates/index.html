@@ -1,0 +1,20 @@
+<!-- src/main/resources/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Data Display</title>
+</head>
+<body>
+<div>
+    <h1>Real-time Data Display</h1>
+    <div id="dataContainer" th:each="data : ${dataList}">
+        <p th:text="${'Name: ' + data.name + ', Origin: ' + data.origin + ', Destination: ' + data.destination + ', Timestamp: ' + data.timestamp}"></p>
+    </div>
+    <div id="successRate" th:text="${'Success Rate: ' + successRate + '%'}"></div>
+</div>
+</body>
+</html>
